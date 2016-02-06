@@ -6,37 +6,10 @@
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
    	<link href="css/style.css" rel="stylesheet">
 </head>
-<body ng-app="toDoList" ng-controller="toDoCtrl as toDo">
-	<div class="container center-block">
-		<div class="row addToDoRow">
-			<div class="col-md-6 col-md-offset-3">
-				<h1 class="text-center">To Do List</h1>
-				<form name="frm" ng-submit="addToDo()">
-				<div class="form-group">
-					<label for="txtAct">Actividad</label>
-					<input type="text" id="txtAct" ng-model="newToDo" required>
-				</div>
-				<div class="form-group">
-					<label for="txtDescrip">Descripción</label>
-					<textarea id="txtDescrip" ng-model="newDescrip" cols="30" rows="3" required></textarea>
-				</div>
-				<input type="submit" class="btn-success">
-				</form>
-			</div><!--"col-md-6 col-md-offset-3" -->
-		</div><!-- row -->
-		<div class="row displayToDos">
-			<div class="col-md-6 col-md-offset-3">
-				<ul>
-					<li ng-repeat="actividad in toDos track by $index">
-						<input type="checkbox" ng-model="actividad.done">
-						<span ng-class="{'done': actividad.done}"><strong>{{actividad.actividad}}</strong> - {{actividad.descripcion}}</span>
-					</li>
-				</ul>
-				<button ng-click="clearDone()" class="btn-warning">Eliminar completados</button>
-				<button ng-click="clearAll()" class="btn-danger">Limpiar todo</button>
-			</div><!-- "col-md-6 col-md-offset-3" -->
-		</div><!-- row -->
-	</div><!--container-fluid-->
+<body ng-app="toDoList">
+
+	 <div ng-view></div>
+
 
 	<script src="logic/angular.min.js"></script>
 	<script src="logic/angular-route.min.js"></script>
