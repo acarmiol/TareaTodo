@@ -1,6 +1,7 @@
 angular.module('BDServices')
 	.factory("BDService", function(){
 		var dataService={};
+
 		dataService.saved= localStorage.getItem("toDos"); //buscar toDos guardados en el local storage
 		//settear el arreglo de toDos con los que ya estaban almacenados o como arreglo vacio
 		if(localStorage.getItem("toDos")!=null){
@@ -13,9 +14,10 @@ angular.module('BDServices')
 			descripción: "buscar videos y hacer la tarea",
 			done: false}
 		*/
+
 		//agregar una actividad a la lista de actividades
-		dataService.addToDo= function(newToDo, newDescrip){
-			dataService.toDos.push({"actividad": newToDo,
+		dataService.addToDo= function(id, newToDo, newDescrip){
+			dataService.toDos.push({"id": id, "actividad": newToDo,
 			"descripcion": newDescrip, "done": false});	
 			dataService.updateStorage();
 		}//fin function
@@ -26,11 +28,12 @@ angular.module('BDServices')
 
 		//remover las actividaes completadas-
 		dataService.clearDone= function(){
-			 dataService.toDos = dataService.toDos.filter(function(item){
+			 dataService.toDos = dataService.toDos.filter(function (item){
 			 	return !item.done;
+			})
 			 	dataService.updateStorage();
 			 	return dataService.getAll();
-			})
+			
 		}//fin function
 
 		//dejar en blanco la lista
