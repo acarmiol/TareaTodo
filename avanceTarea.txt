@@ -1,0 +1,18 @@
+El ruteo ya esta hecho.
+El controlador del índice sirve perfecto.
+Todos los módulos y servicios ya están puestos en archivos separados.
+El bug del local storage ya esta reparado.
+Ya todo tiene id’s y se persisten en el local storage.
+Ya se crean los links y la pagina se dirige hacia el detalle.
+
+
+Falta:
+El controlador del detalle y la vista del detalle.
+Falta agregar validación y que el usuario pueda ingresar fecha límite y estado que eso no era requisito en la tarea vieja y agregar eso a al objeto actividad que se crea.
+Si marco una tarea como terminada pero no la borro en esa misma sesión ese cambio se pierde, hay que actualizar la variable done.
+Falta la navegación.
+Mover el botón de borrado al detalle y regresar automáticamente al índice 
+Opcionales….
+
+
+
