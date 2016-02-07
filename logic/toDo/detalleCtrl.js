@@ -3,14 +3,13 @@ angular.module('toDoList.controllers')
         '$scope',
         '$routeParams',
         'PersistenciaService',
-        function ($scope, $routeParams, PersistenciaService) {
+        function ($scope, $routeParams, BDService) {
             var llave = $routeParams.id;
 
             $scope.init = function () {
                 console.log($routeParams.id);
-                $scope.lista = PersistenciaService.desalmacenar(llave) || [];
+                $scope.lista = BDService.desalmacenar(llave) || [];
             };
 
             $scope.init();
-        }])
-;
+        }]); 
