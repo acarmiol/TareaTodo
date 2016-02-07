@@ -3,11 +3,11 @@ angular.module("toDoList", ['ngRoute', 'dataBase', 'toDoList.controllers'])
     $routeProvider
         .when('/indice', {
             templateUrl: 'html/indice.html',
-            controller: 'toDoCtrl as toDo'
+            controller: 'toDoCtrl'
         })
         .when('/detalle/:id', {
             templateUrl: 'html/detalle.html',
-            controller: 'DetalleCtrl'
+            controller: 'detalleCtrl'
         })
         .otherwise({redirectTo: '/indice'});
 }])
