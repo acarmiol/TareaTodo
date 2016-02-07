@@ -1,7 +1,16 @@
 angular.module('toDoList.controllers')
-	.controller("detalleCtrl", [$routeProvider, "BDService", function(){
-        var detalles = '';
-        
-        detalles= dataService.getAll();
-        
-    }])
+	.controller('DetalleCtrl', [
+        '$scope',
+        '$routeParams',
+        'PersistenciaService',
+        function ($scope, $routeParams, PersistenciaService) {
+            var llave = $routeParams.id;
+
+            $scope.init = function () {
+                console.log($routeParams.id);
+                $scope.lista = PersistenciaService.desalmacenar(llave) || [];
+            };
+
+            $scope.init();
+        }])
+;
