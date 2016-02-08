@@ -1,5 +1,15 @@
 <div class="row displayToDos">
 	<div class="col-md-6 col-md-offset-3">
 		<h1 class="text-center">Detalle</h1>
+		<div class="detalle">
+			<ul>
+				<li ng-repeat="todo in toDoList |  filter: {id:route}">
+					id= {{todo.id}}. <br> 
+					Actividad= <strong>{{todo.actividad}}</strong>.<br>
+					Descripción= {{todo.descripcion}}.<br>
+					Done= {{todo.done}}.
+				</li>
+			</ul>
+		</div>
 	</div> <!-- col-md-6 -->
 </div> <!-- row -->
