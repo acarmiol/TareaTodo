@@ -73,7 +73,7 @@ h1{
 	background-repeat: no-repeat;
 }
 
-.addToDoRow input[type="text"], .addToDoRow textarea{
+.addToDoRow input[type="text"], .addToDoRow textarea, .addToDoRow input[type="date"]{
 	color:#000;
 }
 
