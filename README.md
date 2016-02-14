@@ -1,17 +1,19 @@
 # TareaTodo
 
 
-Mover el botón del borrado hacia el detalle
+1.  Mover el botón del borrado hacia el detalle
 
-Agregar boton de regresar al detalle.html
+2.  Agregar boton de regresar al detalle.html
 
-Agregar fecha y estado 
+3.  Agregar fecha y estado 
 
-Agregar validaciones angular (borrar html required)
+4.  Agregar validaciones angular (borrar html required)
 
-Agregar “sort by” para que se muestre el todo más reciente de primero
+5.  Pasar checkbox del estado (raya en medio) al detalle
 
-Agregar gitignore
+6.  (listo)--Agregar “order by” para que se muestre el todo más reciente de primero-
+
+7.  (listo)--Agregar gitignore
 
 
 
