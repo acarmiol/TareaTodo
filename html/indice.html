@@ -20,7 +20,8 @@
 	<div class="displayToDos col-md-4 col-md-offset-2">
 		<ul>
 
-			<li ng-repeat="actividad in toDos track by $index">   <!-- | orderBy:null:true -->
+			<li ng-repeat="actividad in toDos | orderBy:'-id' track by $index">   
+
 						<input type="checkbox" ng-model="actividad.done" ng-click="updateDone(actividad)">
 						<span ng-class="{'done': actividad.done}"><strong>{{actividad.actividad}}</strong> - {{actividad.descripcion}}</span>
 						<a ng-href="#/detalle/{{actividad.id}}"> Ver Detalles</a>
@@ -32,5 +33,4 @@
 		<button ng-click="clearAll()" class="btn-danger">Limpiar todo</button>
 	</div><!-- "col-md-6 col-md-offset-3" -->
 </div><!-- row -->
-
 
