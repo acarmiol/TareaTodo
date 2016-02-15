@@ -9,16 +9,19 @@ angular.module('BDServices')
 		}else{
 			dataService.toDos=[];
 		}
-		/* toDos
-			{actividad: "estudiar",
-			descripción: "buscar videos y hacer la tarea",
-			done: false}
-		*/
 
 		//agregar una actividad a la lista de actividades
-		dataService.addToDo= function(id, newToDo, newDescrip){
-			dataService.toDos.push({"id": id, "actividad": newToDo,
-			"descripcion": newDescrip, "done": false});	
+		dataService.addToDo= function(objNuevaActividad){
+			/* objNuevaActividad:
+			{
+				actividad: "estudiar",
+				descripción: "buscar videos y hacer la tarea",
+				fecha: 2/2/2016,
+				estado: "pendiente",
+				done: false,
+			}
+		*/
+			dataService.toDos.push(objNuevaActividad);	
 			dataService.updateStorage();
 		}//fin function
 
@@ -33,9 +36,8 @@ angular.module('BDServices')
 			})
 			 	dataService.updateStorage();
 			 	return dataService.getAll();
-			
 		}//fin function
-
+		
 		//dejar en blanco la lista
 		dataService.clearAll= function(){
 			dataService.toDos=[];
@@ -45,7 +47,7 @@ angular.module('BDServices')
 
 		dataService.getAll= function(){
 			return dataService.toDos;
-		}
+		};
 
 		return dataService;
 	});

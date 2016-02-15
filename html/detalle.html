@@ -4,10 +4,11 @@
 		<div class="detalle">
 			<ul>
 				<li ng-repeat="todo in toDoList |  filter: {id:route}">
+					<p>Estado= {{todo.estado}}</p>
 					id= {{todo.id}}. <br> 
 					Actividad= <strong>{{todo.actividad}}</strong>.<br>
 					Descripción= {{todo.descripcion}}.<br>
-					Done= {{todo.done}}.
+					Fecha límite=  {{todo.fecha | date: 'EEE - d/MMM/yy'}}.
 				</li>
 			</ul>
 		</div>
