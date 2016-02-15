@@ -31,6 +31,7 @@ angular.module('BDServices')
 
 		//remover las actividaes completadas-
 		dataService.clearToDo= function(id){
+
 			//  dataService.toDos = dataService.toDos.filter(function (item){
 			//  	return !item.done;
 			// })
