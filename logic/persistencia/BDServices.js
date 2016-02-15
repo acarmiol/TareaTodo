@@ -31,20 +31,24 @@ angular.module('BDServices')
 
 		//remover las actividaes completadas-
 		dataService.clearToDo= function(id){
-
-			//  dataService.toDos = dataService.toDos.filter(function (item){
-			//  	return !item.done;
-			// })
-			//  	dataService.updateStorage();
-			//  	return dataService.getAll();
-
 			 dataService.toDos = dataService.toDos.filter(function (item){
 			 	return item.id!=id;
 			})
 			 	dataService.updateStorage();
 			 	return dataService.getAll();
-
 		}//fin function
+
+		dataService.updateDone= function(actividad){
+			if(actividad.done){
+				actividad.estado= "Completo";
+				actividad.done= true;
+			}else{
+				actividad.estado= "Pendiente";
+				actividad.done= false;
+			}
+			dataService.updateStorage();
+			return dataService.getAll();
+		};
 		
 		//dejar en blanco la lista
 		dataService.clearAll= function(){
