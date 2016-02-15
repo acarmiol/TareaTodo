@@ -9,8 +9,11 @@
 					Actividad= <strong>{{todo.actividad}}</strong>.<br>
 					Descripción= {{todo.descripcion}}.<br>
 					Fecha límite=  {{todo.fecha | date: 'EEE - d/MMM/yy'}}.
+					<br>
+					<button ng-click="clearToDo(todo.id)" class="btn-warning">Remover</button>
 				</li>
 			</ul>
+
 		</div>
         <a class="btn btn-primary" ng-href="#/indice">Volver</a>
 	</div> <!-- col-md-6 -->

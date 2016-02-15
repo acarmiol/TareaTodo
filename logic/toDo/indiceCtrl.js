@@ -31,11 +31,6 @@ angular.module('toDoList.controllers')
 			localStorage.setItem("idSetter", newId);
 		}
 
-		$scope.clearDone= function () {
-			BDService.clearDone();
-			$scope.init();
-		};
-
 		$scope.clearAll= function () {
 			BDService.clearAll();
 			localStorage.setItem("idSetter", 1);
