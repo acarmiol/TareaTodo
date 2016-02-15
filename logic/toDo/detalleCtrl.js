@@ -12,8 +12,8 @@ angular.module('toDoList.controllers')
 		})();
 
 
-		$scope.clearToDo= function () {
-			BDService.clearToDo($scope.route);
+		$scope.deleteToDo= function () {
+			BDService.deleteToDo($scope.route);
 			$scope.toDoList= BDService.getAll();
 		};
 

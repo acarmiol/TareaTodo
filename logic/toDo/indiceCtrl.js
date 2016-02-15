@@ -50,10 +50,8 @@ angular.module('toDoList.controllers')
 			$scope.pendientes= BDService.getAll().filter(function (item) {
 				return !item.done;
 			});
-			return $scope.pendientes.length;
+			return $scope.pendientes;
 		};
-
-		$scope.
 
 		$scope.init();
 	
