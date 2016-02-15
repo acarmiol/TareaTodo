@@ -4,15 +4,15 @@
 		<form name="frm" ng-submit="addToDo()">
 		<div class="form-group">
 			<label for="txtAct">Actividad</label>
-			<input type="text" id="txtAct" ng-model="newToDo" required>
+			<input type="text" id="txtAct" ng-model="nuevaAct.actividad" required>
 		</div>
 		<div class="form-group">
 			<label for="txtDescrip">Descripción</label>
-			<textarea id="txtDescrip" ng-model="newDescrip" cols="30" rows="3"></textarea>
+			<textarea id="txtDescrip" ng-model="nuevaAct.descripcion" cols="30" rows="3"></textarea>
 		</div>
 		<div class="form-group">
 			<label for="impDate">Fecha Límite</label>
-			<input type="date" ng-model="toDoDate" id="impDate">
+			<input type="date" ng-model="nuevaAct.fecha" id="x">
 		</div>
 		<input type="submit" class="btn-success" value="Enviar">
 		</form>
@@ -21,12 +21,13 @@
 <div class="row displayToDos">
 	<div class="col-md-6 col-md-offset-3">
 		<ul>
-			<li ng-repeat="actividad in toDos | orderBy:null:true">
-						<input type="checkbox" ng-model="actividad.done"><a ng-href="#/detalle/{{actividad.id}}">
-						<span ng-class="{'done': actividad.done}"><strong>{{actividad.actividad}}</strong> - {{actividad.descripcion}}</span></a>
+			<li ng-repeat="actividad in toDos track by $index">   <!-- | orderBy:null:true -->
+						<input type="checkbox" ng-model="actividad.done" ng-click="updateDone(actividad)">
+						<span ng-class="{'done': actividad.done}"><strong>{{actividad.actividad}}</strong> - {{actividad.descripcion}}</span>
+						<a ng-href="#/detalle/{{actividad.id}}"> Ver Detalles</a>
 			</li>
 		</ul>
-		<button ng-click="clearDone()" class="btn-warning">Eliminar completados</button>
+		<!-- <button ng-click="clearDone()" class="btn-warning">Eliminar completados</button> -->
 		<button ng-click="clearAll()" class="btn-danger">Limpiar todo</button>
 	</div><!-- "col-md-6 col-md-offset-3" -->
 </div><!-- row -->
