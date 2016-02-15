@@ -4,6 +4,11 @@ angular.module('toDoList.controllers')
 		$scope.toDoList= BDService.getAll();
 		$scope.route= $routeParams.id;
 
+		$scope.clearToDo= function (id) {
+			BDService.clearToDo(id);
+			BDService.getAll();
+		};
+
 		console.log($scope.toDoList);
 		console.log($scope.route);
 
