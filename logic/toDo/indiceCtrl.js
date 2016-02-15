@@ -1,6 +1,8 @@
 angular.module('toDoList.controllers') 
 .controller("indiceCtrl", ['$scope', 'BDService', function ($scope, BDService) {
 
+	$scope.nuevaAct={};
+
 	var geToDoList=  function () {
 			return BDService.getAll();
 		}
@@ -16,10 +18,12 @@ angular.module('toDoList.controllers')
 		}
 		
 		$scope.addToDo= function () {
-			BDService.addToDo($scope.getId(), $scope.newToDo, $scope.newDescrip);
-			$scope.newToDo="";
-			$scope.newDescrip="";
+			$scope.nuevaAct.id=$scope.getId();
+			$scope.nuevaAct.estado= "Pendiente";
+			$scope.nuevaAct.done= false;
+			BDService.addToDo($scope.nuevaAct);
 			$scope.updateId();
+			$scope.nuevaAct={};
 		}
 
 		$scope.updateId= function () {
@@ -30,14 +34,23 @@ angular.module('toDoList.controllers')
 		$scope.clearDone= function () {
 			BDService.clearDone();
 			$scope.init();
-
 		};
 
 		$scope.clearAll= function () {
 			BDService.clearAll();
 			localStorage.setItem("idSetter", 1);
 			$scope.init();
-		}
+		};
+
+		$scope.updateDone= function(actividad){
+			if(actividad.done){
+				actividad.estado= "Completo";
+				actividad.done= true;
+			}else{
+				actividad.estado= "Pendiente";
+				actividad.done= false;
+			}
+		};
 
 		$scope.init= function () {
 			$scope.toDos= geToDoList();
