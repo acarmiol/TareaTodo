@@ -4,10 +4,18 @@
 		<div class="detalle">
 			<ul>
 				<li ng-repeat="todo in toDoList |  filter: {id:route}">
-					id= {{todo.id}}. <br> 
-					Actividad= <strong>{{todo.actividad}}</strong>.<br>
-					Descripción= {{todo.descripcion}}.<br>
-					Done= {{todo.done}}.
+					<table class="table table-striped">
+						<tbody>
+							<tr>
+								<td><strong>Actividad</strong></td>
+								<td><strong>{{todo.actividad}}</strong></td>
+							</tr>
+							<tr>
+								<td><strong>Descripción</strong></td>
+								<td>{{todo.descripcion}}.</td>
+							</tr>
+						</tbody>
+					</table>
 				</li>
 			</ul>
 		</div>
