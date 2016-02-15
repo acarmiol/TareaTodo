@@ -2,6 +2,7 @@ angular.module('toDoList.controllers')
 .controller("indiceCtrl", ['$scope', 'BDService', function ($scope, BDService) {
 
 	$scope.nuevaAct={};
+	$scope.pendientes=0;
 
 	var geToDoList=  function () {
 			return BDService.getAll();
@@ -39,12 +40,18 @@ angular.module('toDoList.controllers')
 
 		$scope.updateDone= function(actividad){
 			BDService.updateDone(actividad);
-
 		};
 
 		$scope.init= function () {
 			$scope.toDos= geToDoList();
 		}
+
+		$scope.cantToDos= function () {
+			$scope.pendientes= BDService.getAll().filter(function (item) {
+				return !item.done;
+			});
+			return $scope.pendientes.length;
+		};
 
 		$scope.init();
 	

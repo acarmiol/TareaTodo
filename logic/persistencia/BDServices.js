@@ -33,7 +33,7 @@ angular.module('BDServices')
 		dataService.clearToDo= function(id){
 			 dataService.toDos = dataService.toDos.filter(function (item){
 			 	return item.id!=id;
-			})
+			});
 			 	dataService.updateStorage();
 			 	return dataService.getAll();
 		}//fin function
