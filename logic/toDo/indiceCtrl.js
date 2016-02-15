@@ -53,6 +53,8 @@ angular.module('toDoList.controllers')
 			return $scope.pendientes.length;
 		};
 
+		$scope.
+
 		$scope.init();
 	
 }]);
