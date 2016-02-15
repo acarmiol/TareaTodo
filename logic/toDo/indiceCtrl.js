@@ -38,13 +38,8 @@ angular.module('toDoList.controllers')
 		};
 
 		$scope.updateDone= function(actividad){
-			if(actividad.done){
-				actividad.estado= "Completo";
-				actividad.done= true;
-			}else{
-				actividad.estado= "Pendiente";
-				actividad.done= false;
-			}
+			BDService.updateDone(actividad);
+
 		};
 
 		$scope.init= function () {
