@@ -23,7 +23,7 @@
 			<li ng-repeat="actividad in toDos | orderBy:'-id' track by $index">   
 						<input type="checkbox" ng-model="actividad.done" ng-click="updateDone(actividad)">
 						<span ng-class="{'done': actividad.done}"><strong>{{actividad.actividad}}</strong></span>
-						<a ng-href="#/detalle/{{actividad.id}}"> Ver Detalles</a>
+						<a ng-href="#/detalle/{{actividad.id}}"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> </a>
 						<hr>
 			</li>
 		</ul>

@@ -1,13 +1,15 @@
 <div class="row displayToDos">
 	<div class="col-md-6 col-md-offset-3">
-		<a class="btn btn-primary" ng-href="#/indice">Volver</a>
+		<a ng-href="#/indice" class="atrasbtn btn btn-default btn-sm">
+			<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Volver
+		</a>
 		<h1 class="text-center">Detalle</h1>
 		<div class="detalle">
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<td>Estado</td>
-								<td> {{todo.estado}}</td>
+								<th>Estado</th>
+								<th> {{todo.estado}}</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -16,11 +18,11 @@
 								<td>{{todo.actividad}}</td>
 							</tr>
 							<tr>
-								<td>Descripción</td>
+								<td><strong>Descripción</strong></td>
 								<td>{{todo.descripcion}}.</td>
 							</tr>
 							<tr>
-								<td>Fecha limite</td>
+								<td><strong>Fecha límite</strong></td>
 								<td>{{todo.fecha | date: 'EEE - d/MMM/yy'}}</td>
 							</tr>
 						</tbody>
