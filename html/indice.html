@@ -1,0 +1,34 @@
+<div class="row addToDoRow">
+	<div class="col-md-5 col-md-offset-1">
+		<h1 class="text-center">To Do List</h1>
+		<form name="frm" ng-submit="addToDo()">
+		<div class="form-group">
+			<label for="txtAct">Actividad</label>
+			<input type="text" id="txtAct" ng-model="nuevaAct.actividad" required>
+		</div>
+		<div class="form-group">
+			<label for="txtDescrip">Descripción</label>
+			<textarea id="txtDescrip" ng-model="nuevaAct.descripcion" cols="30" rows="3"></textarea>
+		</div>
+		<div class="form-group">
+			<label for="impDate">Fecha Límite</label>
+			<input type="date" ng-model="nuevaAct.fecha" id="x">
+		</div>
+		<input type="submit" class="btn-success" value="Enviar">
+		</form>
+	</div><!--"col-md-6 col-md-offset-3" -->
+	<div class="displayToDos col-md-4 col-md-offset-2">
+		<h4 ng-show="toDos.length>0">Tiene: {{cantToDos().length}} <span ng-show="cantToDos().length>1 || cantToDos()==0">pendientes</span><span ng-show="cantToDos().length==1">pendiente</span></h4>
+		<ul>
+			<li ng-repeat="actividad in toDos | orderBy:'-id' track by $index">   
+						<input type="checkbox" ng-model="actividad.done" ng-click="updateDone(actividad)">
+						<span ng-class="{'done': actividad.done}"><strong>{{actividad.actividad}}</strong></span>
+						<a ng-href="#/detalle/{{actividad.id}}"> Ver Detalles</a>
+						<hr>
+			</li>
+		</ul>
+		<button ng-click="clearAll()" class="btn-danger" ng-show="toDos.length>0">Limpiar todo</button>
+		<p ng-show="toDos.length<1">No tiene pendienes</p>
+	</div><!-- "col-md-6 col-md-offset-3" -->
+</div><!-- row -->
+

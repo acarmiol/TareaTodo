@@ -1,0 +1,31 @@
+<div class="row displayToDos">
+	<div class="col-md-6 col-md-offset-3">
+		<a class="btn btn-primary" ng-href="#/indice">Volver</a>
+		<h1 class="text-center">Detalle</h1>
+		<div class="detalle">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<td>Estado</td>
+								<td> {{todo.estado}}</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>Actividad</strong></td>
+								<td>{{todo.actividad}}</td>
+							</tr>
+							<tr>
+								<td>Descripción</td>
+								<td>{{todo.descripcion}}.</td>
+							</tr>
+							<tr>
+								<td>Fecha limite</td>
+								<td>{{todo.fecha | date: 'EEE - d/MMM/yy'}}</td>
+							</tr>
+						</tbody>
+					</table>
+					<a ng-href="#/indice" ng-click="deleteToDo()"  class="btn btn-warning">Remover</a>
+		</div>
+	</div> <!-- col-md-6 -->
+</div> <!-- row -->

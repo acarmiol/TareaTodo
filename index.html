@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>To Do List</title>
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   	<link href="css/style.css" rel="stylesheet">
+</head>
+<body ng-app="toDoList">
+	<div class="container center-block" ng-view>
+	</div>
+	
+
+	<script src="logic/angular.min.js"></script>
+	<script src="logic/angular-route.min.js"></script>
+	<!-- <script src="logic/toDoList.js"></script> -->
+	<script src="logic/app.js"></script>
+	<script src="logic/toDo/detalleCtrl.js"></script>
+	<script src="logic/toDo/indiceCtrl.js"></script>
+	<script src="logic/persistencia/dataBaseModule.js"></script>
+	<script src="logic/persistencia/BDServices.js"></script>
+</body>
+</html>
